@@ -4,9 +4,8 @@ D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\bin\Debug\Client.pdb
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.exe
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.pdb
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
-D:\LearnWCF\zhuxw\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
-D:\LearnWCF\zhuxw\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.exe
 D:\LearnWCF\zhuxw\Labs\chapter1\HelloIndigo\Client\bin\Debug\Client.exe.config
 D:\LearnWCF\zhuxw\Labs\chapter1\HelloIndigo\Client\bin\Debug\Client.exe
 D:\LearnWCF\zhuxw\Labs\chapter1\HelloIndigo\Client\bin\Debug\Client.pdb
+D:\LearnWCF\zhuxw\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.exe
 D:\LearnWCF\zhuxw\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.pdb

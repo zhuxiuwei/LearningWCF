@@ -18,7 +18,7 @@ namespace Host
     {
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof(HelloIndigoService)))
+            using (ServiceHost host = new ServiceHost(typeof(HelloIndigo.HelloIndigoService)))
             {
                 host.Open();
                 Console.WriteLine("Press <Enter> to Terminate Server.");
