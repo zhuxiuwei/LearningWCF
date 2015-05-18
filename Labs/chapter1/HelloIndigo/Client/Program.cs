@@ -14,6 +14,11 @@ namespace Client
     {
         static void Main(string[] args)
         {
+            //call proxy
+            localhost.HelloIndigoServiceClient proxy = new localhost.HelloIndigoServiceClient();
+            String s = proxy.HelloIndigo();
+            Console.WriteLine(s);
+
             Console.WriteLine("Press <ENTER> to terminate Client.");
             Console.ReadLine();
         }

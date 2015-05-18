@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("IDesign")]
 [assembly: AssemblyProduct("Client")]
-[assembly: AssemblyCopyright("Copyright © IDesign 2005")]
+[assembly: AssemblyCopyright("Copyright ?IDesign 2005")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

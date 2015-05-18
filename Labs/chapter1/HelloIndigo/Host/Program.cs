@@ -8,7 +8,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.ServiceModel;
 
-
+/**
+ * 20150518 zhuxw 
+ */
 
 namespace Host
 {
@@ -19,7 +21,7 @@ namespace Host
             using (ServiceHost host = new ServiceHost(typeof(HelloIndigoService)))
             {
                 host.Open();
-                Console.WriteLine("Press <Enter> to quit.");
+                Console.WriteLine("Press <Enter> to Terminate Server.");
                 Console.ReadLine();
             }
         }
