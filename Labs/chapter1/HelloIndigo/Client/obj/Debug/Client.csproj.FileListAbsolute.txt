@@ -3,3 +3,4 @@ D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\bin\Debug\Client.exe
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\bin\Debug\Client.pdb
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.exe
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.pdb
+D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache

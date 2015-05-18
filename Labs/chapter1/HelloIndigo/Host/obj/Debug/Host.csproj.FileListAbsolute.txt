@@ -4,3 +4,4 @@ D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Host\bin\Debug\Host.exe
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Host\bin\Debug\Host.pdb
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Host\obj\Debug\Host.exe
 D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Host\obj\Debug\Host.pdb
+D:\LearningWCF\xwzhu\Labs\chapter1\HelloIndigo\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
