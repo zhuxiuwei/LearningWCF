@@ -1,0 +1,9 @@
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\bin\Debug\Host.exe.config
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\bin\Debug\Host.exe
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\bin\Debug\Host.pdb
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\bin\Debug\HelloIndigo.dll
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\bin\Debug\HelloIndigo.pdb
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\obj\Debug\Host.csprojResolveAssemblyReference.cache
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\obj\Debug\Host.exe
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Host\obj\Debug\Host.pdb

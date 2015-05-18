@@ -1,0 +1,5 @@
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\bin\HelloIndigo.dll.config
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\bin\HelloIndigo.dll
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\bin\HelloIndigo.pdb
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\obj\Debug\HelloIndigo.dll
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\obj\Debug\HelloIndigo.pdb

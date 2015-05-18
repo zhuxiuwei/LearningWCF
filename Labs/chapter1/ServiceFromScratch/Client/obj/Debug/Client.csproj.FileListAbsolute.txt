@@ -1,0 +1,6 @@
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Client\bin\Debug\Client.exe.config
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Client\bin\Debug\Client.exe
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Client\bin\Debug\Client.pdb
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Client\obj\Debug\Client.exe
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Client\obj\Debug\Client.pdb
+D:\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\Client\obj\Debug\Client.csprojResolveAssemblyReference.cache
