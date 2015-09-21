@@ -7,7 +7,8 @@ using System.ServiceModel;
 
 namespace Client
 {
-    [ServiceContract(Name = "HelloIndigoService", Namespace = "http://www.thatindigogirl.com/samples/2006/06")]
+    //[ServiceContract(Namespace = "http://www.thatindigogirl.com/samples/2006/06")]
+    [ServiceContract]
     public interface IHelloIndigoService
     {
         [OperationContract]
