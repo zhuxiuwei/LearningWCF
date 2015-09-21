@@ -19,8 +19,8 @@ namespace Client
             string s = proxy.HelloIndigo();
             Console.WriteLine("method1: " + s);
 
-            //方法2: （2015-09-21新加） 直接用service interface。这样的话需要在client project里引入HelloIndigo project。
-            HelloIndigo.IHelloIndigoService proxy2 = ChannelFactory<HelloIndigo.IHelloIndigoService>.CreateChannel(new BasicHttpBinding(), ep);
+            //方法2: （2015-09-21新加） 直接调用Service端接口中定义的ServiceContract。注意这样的话需要提前在client project里引入HelloIndigo project。
+            HelloIndigo.IHelloIndigoService proxy2 = ChannelFactory<HelloIndigo.IHelloIndigoService>.CreateChannel(new BasicHttpBinding(), ep); //注意调的是接口
             s = proxy2.HelloIndigo();
             Console.WriteLine("method2: " + s);
 
