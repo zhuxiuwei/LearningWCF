@@ -27,4 +27,21 @@ namespace HelloIndigo
             return "Hello Indigo!";
         }
     }
+
+
+    //测验一个project启动两个service。
+    [ServiceContract]
+     public interface IService2
+     {
+         [OperationContract]
+         string Hello();
+     }
+
+     public class Service2 : IService2
+     {
+         public string Hello()
+         {
+             return "Hello Service 2!";
+         }
+     }
 }

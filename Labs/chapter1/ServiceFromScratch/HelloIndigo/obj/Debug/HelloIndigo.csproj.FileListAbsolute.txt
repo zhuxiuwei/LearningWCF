@@ -8,4 +8,3 @@ D:\workspace_vs\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\b
 D:\workspace_vs\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\bin\HelloIndigo.pdb
 D:\workspace_vs\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\obj\Debug\HelloIndigo.dll
 D:\workspace_vs\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\obj\Debug\HelloIndigo.pdb
-D:\workspace_vs\LearningWCF\xwzhu\Labs\chapter1\ServiceFromScratch\HelloIndigo\obj\Debug\HelloIndigo.csprojResolveAssemblyReference.cache
