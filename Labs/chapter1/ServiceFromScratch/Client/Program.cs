@@ -26,7 +26,9 @@ namespace Client
             //测试调用Serice2的方法    (2015-09-23新加)
             EndpointAddress ep2 = new EndpointAddress("http://localhost:8000/TestService2");
             HelloIndigo.IService2 proxyForService2 = ChannelFactory<HelloIndigo.IService2>.CreateChannel(new BasicHttpBinding(), ep2);
-            s = proxyForService2.Hello();
+            s = proxyForService2.Hello("my param!");
+            Console.WriteLine("Service2: " + s);
+            s = proxyForService2.Hello2("param2");
             Console.WriteLine("Service2: " + s);
 
             Console.WriteLine("Press <ENTER> to terminate Client.");

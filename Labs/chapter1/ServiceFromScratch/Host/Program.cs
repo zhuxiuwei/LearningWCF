@@ -24,7 +24,7 @@ namespace Host
                     host2.AddServiceEndpoint(typeof(IService2), new BasicHttpBinding(), "");
                     host2.Open();    // Service channel craeted
 
-                    Console.WriteLine("Press <ENTER> to terminate the service host");
+                    Console.WriteLine("Press <ENTER> to terminate the service host");   //一定要在using内。否则跳出using，serviehost就被资源关闭了
                     Console.ReadLine();
                 }
             }   

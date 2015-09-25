@@ -34,14 +34,22 @@ namespace HelloIndigo
      public interface IService2
      {
          [OperationContract]
-         string Hello();
+        string Hello(string s);
+
+         [OperationContract]
+         string Hello2([MessageParameter(Name="string")]string s);  //Learn WCF p89。书上说只能这么写，像Hello()那么写不行，但实验证明是可以的。不明白。
      }
 
      public class Service2 : IService2
      {
-         public string Hello()
+         public string Hello(string s)
          {
-             return "Hello Service 2!";
+             return String.Format("Service2 Hello Method! Your parameter is: {0}", s);
+         }
+
+         public string Hello2([MessageParameter(Name = "string")]string s)
+         {
+             return String.Format("Service2 Hello2 Method! Your parameter is: {0}", s);
          }
      }
 }
