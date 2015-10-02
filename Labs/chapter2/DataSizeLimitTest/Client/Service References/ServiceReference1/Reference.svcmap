@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="75f80d8a-8060-4ebb-9e88-a6f87fa1f8dd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/JustAddress" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="JustAddress.xsd" MetadataType="Schema" ID="cf6a9496-d532-49ae-b3cf-9d6670ef4e18" SourceId="1" SourceUrl="http://localhost:8000/JustAddress?xsd=xsd0" />
+    <MetadataFile FileName="ServiceImpl.wsdl" MetadataType="Wsdl" ID="0032d7a2-85c6-462e-b95c-dd7e93533125" SourceId="1" SourceUrl="http://localhost:8000/JustAddress?wsdl" />
+    <MetadataFile FileName="JustAddress.disco" MetadataType="Disco" ID="e846e9bb-dfee-4f96-ba9d-fa40974f9f9e" SourceId="1" SourceUrl="http://localhost:8000/JustAddress?disco" />
+    <MetadataFile FileName="JustAddress1.xsd" MetadataType="Schema" ID="8d026544-afa0-49d7-8b16-bc8f3102891b" SourceId="1" SourceUrl="http://localhost:8000/JustAddress?xsd=xsd2" />
+    <MetadataFile FileName="JustAddress2.xsd" MetadataType="Schema" ID="c3c1c3c6-b7c2-4f76-b765-81f1733d5fb8" SourceId="1" SourceUrl="http://localhost:8000/JustAddress?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

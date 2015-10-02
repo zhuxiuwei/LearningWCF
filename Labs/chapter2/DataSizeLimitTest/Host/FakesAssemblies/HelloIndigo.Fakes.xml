@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HelloIndigo.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:ServiceFromScratch.Fakes.ShimHelloIndigoService">
+            <summary>Shim type of ServiceFromScratch.HelloIndigoService</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.ShimHelloIndigoService.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.ShimHelloIndigoService.#ctor(ServiceFromScratch.HelloIndigoService)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.ShimHelloIndigoService.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.ShimHelloIndigoService.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.ShimHelloIndigoService.Bind(ServiceFromScratch.IHelloIndigoService)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:ServiceFromScratch.Fakes.ShimHelloIndigoService.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:ServiceFromScratch.Fakes.ShimHelloIndigoService.Constructor">
+            <summary>Sets the shim of HelloIndigoService.HelloIndigoService()</summary>
+        </member>
+        <member name="P:ServiceFromScratch.Fakes.ShimHelloIndigoService.HelloIndigo">
+            <summary>Sets the shim of HelloIndigoService.HelloIndigo()</summary>
+        </member>
+        <member name="T:ServiceFromScratch.Fakes.ShimHelloIndigoService.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:ServiceFromScratch.Fakes.ShimHelloIndigoService.AllInstances.HelloIndigo">
+            <summary>Sets the shim of HelloIndigoService.HelloIndigo()</summary>
+        </member>
+        <member name="T:ServiceFromScratch.Fakes.StubHelloIndigoService">
+            <summary>Stub type of ServiceFromScratch.HelloIndigoService</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.StubHelloIndigoService.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.StubHelloIndigoService.InitializeStub">
+            <summary>Initializes a new instance of type StubHelloIndigoService</summary>
+        </member>
+        <member name="P:ServiceFromScratch.Fakes.StubHelloIndigoService.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:ServiceFromScratch.Fakes.StubHelloIndigoService.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:ServiceFromScratch.Fakes.StubHelloIndigoService.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+        <member name="T:ServiceFromScratch.Fakes.StubIHelloIndigoService">
+            <summary>Stub type of ServiceFromScratch.IHelloIndigoService</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.StubIHelloIndigoService.#ctor">
+            <summary>Initializes a new instance of type StubIHelloIndigoService</summary>
+        </member>
+        <member name="F:ServiceFromScratch.Fakes.StubIHelloIndigoService.HelloIndigo">
+            <summary>Sets the stub of IHelloIndigoService.HelloIndigo()</summary>
+        </member>
+        <member name="M:ServiceFromScratch.Fakes.StubIHelloIndigoService.hi::ServiceFromScratch#IHelloIndigoService#HelloIndigo">
+            <summary>Sets the stub of IHelloIndigoService.HelloIndigo()</summary>
+        </member>
+    </members>
+</doc>
