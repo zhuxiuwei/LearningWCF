@@ -52,4 +52,19 @@ namespace HelloIndigo
              return String.Format("Service2 Hello2 Method! Your parameter is: {0}", s);
          }
      }
+
+     //测试SSL Service. 1602015 http://www.codeproject.com/Articles/36683/simple-steps-to-enable-X-certificates-on-WCF?fid=1541161&fr=1#xx0xx
+     [ServiceContract]
+     public interface ISecureService
+     {
+         [OperationContract]
+         string HelloSecure([MessageParameter(Name = "stringSecure")]string s); 
+     }
+     public class SecureService : ISecureService
+     {
+         public string HelloSecure([MessageParameter(Name = "stringSecure")]string s)
+         {
+             return String.Format("SecureService HelloSecure Method! Your parameter is: {0}", s);
+         }
+     }
 }
