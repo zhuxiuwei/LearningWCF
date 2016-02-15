@@ -64,6 +64,7 @@ namespace HelloIndigo
      {
          public string HelloSecure([MessageParameter(Name = "stringSecure")]string s)
          {
+             Console.WriteLine("Request Incoming!");
              return String.Format("SecureService HelloSecure Method! Your parameter is: {0}", s);
          }
      }

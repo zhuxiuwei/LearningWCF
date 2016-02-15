@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Client
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void callService()
         {
-            
             EndpointAddress ep = new EndpointAddress("http://localhost:8000/HelloIndigoService");
-            
             //方法1: normal way - 用client工程里定义好的service proxy
             IHelloIndigoService proxy = ChannelFactory<IHelloIndigoService>.CreateChannel(new BasicHttpBinding(), ep);
             string s = proxy.HelloIndigo();
@@ -22,23 +21,68 @@ namespace Client
             HelloIndigo.IHelloIndigoService proxy2 = ChannelFactory<HelloIndigo.IHelloIndigoService>.CreateChannel(new BasicHttpBinding(), ep); //注意调的是接口
             s = proxy2.HelloIndigo();
             Console.WriteLine("method2: " + s);
+        }
 
+        private static void callService2()
+        {
             ////测试调用Serice2的方法    (2015-09-23新加)
-            //EndpointAddress ep2 = new EndpointAddress("http://localhost:8000/TestService2");
-            //HelloIndigo.IService2 proxyForService2 = ChannelFactory<HelloIndigo.IService2>.CreateChannel(new BasicHttpBinding(), ep2);
-            //s = proxyForService2.Hello("my param!");
-            //Console.WriteLine("Service2: " + s);
-            //s = proxyForService2.Hello2("param2");
-            //Console.WriteLine("Service2: " + s);
+            EndpointAddress ep2 = new EndpointAddress("http://localhost:8000/TestService2");
+            HelloIndigo.IService2 proxyForService2 = ChannelFactory<HelloIndigo.IService2>.CreateChannel(new BasicHttpBinding(), ep2);
+            string s = proxyForService2.Hello("my param!");
+            Console.WriteLine("Service2: " + s);
+            s = proxyForService2.Hello2("param2");
+            Console.WriteLine("Service2: " + s);
+        }
 
+        private static void callSSLService()
+        {
             //测试调用SSL Service (2016-02-05新加)
-            //EndpointAddress ep3 = new EndpointAddress("http://localhost:8000/SSLService");
-            //ISSLService proxyForSslService = ChannelFactory<ISSLService>.CreateChannel(new BasicHttpBinding(), ep3);
-            //string s3 = proxyForSslService.HelloSSL("client param!");
-            //Console.WriteLine("SSLService: " + s3);
-            
-            //Console.WriteLine("Press <ENTER> to terminate Client.");
-            //Console.ReadLine();
+            EndpointAddress ep3 = new EndpointAddress("http://localhost:8000/SSLService");
+            ISecureService proxyForSslService = ChannelFactory<ISecureService>.CreateChannel(new WSHttpBinding(), ep3);
+            string s3 = proxyForSslService.HelloSSL("client param!");
+            Console.WriteLine("SSLService: " + s3);
+        }
+
+        //把client安全相关的信息都写到code里
+        static void callSSLService2()
+        {
+            // Create the binding.
+            WSHttpBinding myBinding = new WSHttpBinding();
+            myBinding.Security.Mode = SecurityMode.Transport;
+            myBinding.Security.Transport.ClientCredentialType =
+               HttpClientCredentialType.Certificate;
+
+            // Create the endpoint address. Note that the machine name 
+            // must match the subject or DNS field of the X.509 certificate
+            // used to authenticate the service. 
+            EndpointAddress ea = new EndpointAddress("https://localhost:8123/SSLService");
+
+            // Create the client. The code for the calculator 
+            // client is not shown here. See the sample applications
+            // for examples of the calculator code.
+            var cc = new SslClient(myBinding, ea);
+
+            // The client must specify a certificate trusted by the server.
+            cc.ClientCredentials.ClientCertificate.SetCertificate(
+                StoreLocation.CurrentUser,
+                StoreName.My,
+                X509FindType.FindBySubjectName,
+                "WcfClient");
+
+            // Begin using the client.
+            Console.WriteLine(cc.HelloSSL("hello from SSL"));
+
+            cc.Close();
+        }
+
+        static void Main(string[] args)
+        {
+            //callService();
+            //callService2();
+            callSSLService2();
+
+            Console.WriteLine("Press <ENTER> to terminate Client.");
+            Console.ReadLine();
         }
     }
 }
