@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using System.Security.Cryptography.X509Certificates;
+using System.ServiceModel.Security;
 
 namespace Client
 {
@@ -43,19 +44,18 @@ namespace Client
             Console.WriteLine("SSLService: " + s3);
         }
 
-        //把client安全相关的信息都写到code里
+        //把client安全相关的信息都写到code里 160215
         static void callSSLService2()
         {
             // Create the binding.
             WSHttpBinding myBinding = new WSHttpBinding();
-            myBinding.Security.Mode = SecurityMode.Transport;
-            myBinding.Security.Transport.ClientCredentialType =
-               HttpClientCredentialType.Certificate;
+            myBinding.Security.Mode = SecurityMode.TransportWithMessageCredential;
+            myBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Certificate;
 
             // Create the endpoint address. Note that the machine name 
             // must match the subject or DNS field of the X.509 certificate
             // used to authenticate the service. 
-            EndpointAddress ea = new EndpointAddress("https://localhost:8123/SSLService");
+            EndpointAddress ea = new EndpointAddress(new Uri("https://localhost:8123/SSLService"), EndpointIdentity.CreateDnsIdentity("localhost"));
 
             // Create the client. The code for the calculator 
             // client is not shown here. See the sample applications
@@ -64,10 +64,13 @@ namespace Client
 
             // The client must specify a certificate trusted by the server.
             cc.ClientCredentials.ClientCertificate.SetCertificate(
-                StoreLocation.CurrentUser,
+                StoreLocation.LocalMachine,
                 StoreName.My,
                 X509FindType.FindBySubjectName,
-                "WcfClient");
+                "localhost");
+            cc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
+            cc.ClientCredentials.ServiceCertificate.Authentication.TrustedStoreLocation = StoreLocation.LocalMachine;
+
 
             // Begin using the client.
             Console.WriteLine(cc.HelloSSL("hello from SSL"));
