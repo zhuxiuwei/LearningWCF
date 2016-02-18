@@ -11,7 +11,10 @@ namespace Client
     public interface ISecureService 
     {
         [OperationContract]
-        string HelloSecure([MessageParameter(Name = "stringSSL")]string s); 
+        //以下两种写法都行，注意参数名"stringSecure"一定要对！！ 160218
+        //string HelloSecure([MessageParameter(Name = "stringSecure")]string s); 
+        string HelloSecure(string stringSecure); 
+
     }
 
     //因为add service reference总不work，自己模仿着写了下面的类、构造函数和方法。 160215
@@ -21,7 +24,7 @@ namespace Client
                 base(binding, remoteAddress) {
         }
 
-        public string HelloSecure([MessageParameter(Name = "stringSSL")]string s)
+        public string HelloSecure([MessageParameter(Name = "stringSecure")]string s)
         {
             return base.Channel.HelloSecure(s);
         }

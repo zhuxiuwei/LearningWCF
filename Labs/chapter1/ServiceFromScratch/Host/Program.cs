@@ -51,16 +51,6 @@ namespace Host
 
         static void hostSSL()
         {
-            //using (ServiceHost host2 = new ServiceHost(typeof(SecureService), new Uri("http://localhost:8000/SecureService"))) 
-            //{
-            //    host2.AddServiceEndpoint(typeof(ISecureService), new BasicHttpBinding(), "");
-            //    host2.Open();    // Service channel craeted
-
-            //    Console.WriteLine("Press <ENTER> to terminate the service host");   //一定要在using内。否则跳出using，serviehost就被资源关闭了
-            //    Console.ReadLine();
-            //}
-
-
             using (ServiceHost host3 = new ServiceHost(typeof(SecureService)))
             {
                 host3.Open();
