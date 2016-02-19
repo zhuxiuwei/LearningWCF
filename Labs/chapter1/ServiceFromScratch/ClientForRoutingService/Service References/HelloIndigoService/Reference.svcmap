@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="83b3549f-4144-4df2-adba-1ef281660ad3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/HelloIndigoService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HelloIndigoService.xsd" MetadataType="Schema" ID="0bda1b3f-8840-422d-aae0-b3b1aaf9949d" SourceId="1" SourceUrl="http://localhost:8000/HelloIndigoService?xsd=xsd0" />
+    <MetadataFile FileName="HelloIndigoService1.xsd" MetadataType="Schema" ID="289506d6-cb93-403a-97a4-f6e08988356b" SourceId="1" SourceUrl="http://localhost:8000/HelloIndigoService?xsd=xsd1" />
+    <MetadataFile FileName="HelloIndigoService.disco" MetadataType="Disco" ID="d73d07c6-cd4a-4ced-995c-32d70c709f03" SourceId="1" SourceUrl="http://localhost:8000/HelloIndigoService?disco" />
+    <MetadataFile FileName="HelloIndigoService.wsdl" MetadataType="Wsdl" ID="61f4a666-8d23-4c81-8d98-61064e68ed51" SourceId="1" SourceUrl="http://localhost:8000/HelloIndigoService?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

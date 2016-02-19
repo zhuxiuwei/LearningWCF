@@ -55,6 +55,11 @@ namespace Client
             //myBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Certificate;     //不能用这个！！！ 160217
             myBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;            //要用这个！！！ 160217
 
+            //160218 added  -- 没啥效果
+            //模仿flynn的code: D:\workspace_vs\Phoenix\sources\dev\pipeline\src\odl\DataDumpers\ProxyDumper\ProxyDumper.cs的187行，看看能不能加了后client就不用装server的cert了。试了不行。
+            myBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
+            myBinding.Security.Message.EstablishSecurityContext = false;    //这句话，需要修改server端，才能work。见host的app.config里的 “160218 模仿cosmosproxy加的” 注释。
+
             //var myBinding = new WSHttpBinding(SecurityMode.TransportWithMessageCredential);
             //myBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
             //myBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
@@ -81,6 +86,10 @@ namespace Client
             cc.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.PeerTrust;
             cc.ClientCredentials.ServiceCertificate.Authentication.TrustedStoreLocation = StoreLocation.LocalMachine;
 
+            //!!!!160218  加上这句话，client端不需要再truste people 里安装server端的cert，也可以发消息了！参考：
+            //  1. http://stackoverflow.com/questions/29389785/disable-certification-validation-on-client-side-of-wcf
+            //  2. D:\workspace_vs\Phoenix\sources\dev\pipeline\src\odl\DataDumpers\SiphonDumper\SiphonDumper.cs
+            System.Net.ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
 
             // Begin using the client.
             Console.WriteLine(cc.HelloSecure("hello from SSL"));
