@@ -12,6 +12,16 @@ namespace Client
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            //callService();
+            //callService2();
+            callSSLService2();
+
+            Console.WriteLine("Press <ENTER> to terminate Client.");
+            Console.ReadLine();
+        }
+
         private static void callService()
         {
             EndpointAddress ep = new EndpointAddress("http://WIN-C088QGABQ4R:8000/HelloIndigoService");
@@ -60,10 +70,6 @@ namespace Client
             myBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
             myBinding.Security.Message.EstablishSecurityContext = false;    //这句话，需要修改server端，才能work。见host的app.config里的 “160218 模仿cosmosproxy加的” 注释。
 
-            //var myBinding = new WSHttpBinding(SecurityMode.TransportWithMessageCredential);
-            //myBinding.Security.Message.ClientCredentialType = MessageCredentialType.Certificate;
-            //myBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
-
             // Create the endpoint address. Note that the machine name 
             // must match the subject or DNS field of the X.509 certificate
             // used to authenticate the service. 
@@ -95,16 +101,6 @@ namespace Client
             Console.WriteLine(cc.HelloSecure("hello from SSL"));
 
             cc.Close();
-        }
-
-        static void Main(string[] args)
-        {
-            //callService();
-            //callService2();
-            callSSLService2();
-
-            Console.WriteLine("Press <ENTER> to terminate Client.");
-            Console.ReadLine();
         }
     }
 }

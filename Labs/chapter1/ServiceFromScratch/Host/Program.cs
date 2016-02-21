@@ -11,6 +11,15 @@ namespace Host
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            //Basic HTTP WCF host. Enable this when test basic HTTP errvice, or HTTP/HTTPS Routing service.
+            hostFromStrach();
+            //hostWithAppConfig();
+
+            //ssl WCF host
+            //hostSSL();
+        }
 
         static void hostFromStrach(){
             //方法1： from strach。注意用方法1的时候，App.config里方法2的设置都要删除，否则会报错:"This collection already contains an address with scheme http.  There can be at most one address per scheme in this collection. ..."
@@ -64,6 +73,8 @@ namespace Host
             } 
         }
 
+        //用来测试SSL的server - client和SSL的serve通信。和routing service没关系。
+        //如果要测试routing service，应该调用hostFromStrach()。让Routing service route到hostFromStrach的服务上。
         static void hostSSL()
         {
             using (ServiceHost host3 = new ServiceHost(typeof(SecureService)))
@@ -74,14 +85,5 @@ namespace Host
             }
         }
 
-        static void Main(string[] args)
-        {
-            //Basic HTTP WCF host
-            hostFromStrach();
-            //hostWithAppConfig();
-            
-            //ssl WCF host
-            //hostSSL();
-        }
     }
 }
