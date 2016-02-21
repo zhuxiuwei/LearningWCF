@@ -5,22 +5,46 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using HelloIndigo;
+using System.ServiceModel.Description;
 
 namespace Host
 {
     class Program
     {
+        static void Main(string[] args)
+        {
+            //Basic HTTP WCF host. Enable this when test basic HTTP errvice, or HTTP/HTTPS Routing service.
+            hostFromStrach();
+            //hostWithAppConfig();
+
+            //ssl WCF host
+            //hostSSL();
+        }
 
         static void hostFromStrach(){
             //方法1： from strach。注意用方法1的时候，App.config里方法2的设置都要删除，否则会报错:"This collection already contains an address with scheme http.  There can be at most one address per scheme in this collection. ..."
             using (ServiceHost host = new ServiceHost(typeof(HelloIndigoService), new Uri("http://localhost:8000/HelloIndigoService")))   //注意： typeof里，必须是class，不能是interface
             {
+                //enable HTTP get
+                ServiceMetadataBehavior smb = host.Description.Behaviors.Find<ServiceMetadataBehavior>();
+                if (smb == null)  smb = new ServiceMetadataBehavior();
+                smb.HttpGetEnabled = true;
+                smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
+                host.Description.Behaviors.Add(smb);
+
                 host.AddServiceEndpoint(typeof(IHelloIndigoService), new BasicHttpBinding(), "");   //注意，这里的typeof又是接口了。真是够乱七八糟的。
                 host.Open();    // Service channel craeted
 
                 //Service 2 test 2015-09-23新加
                 using (ServiceHost host2 = new ServiceHost(typeof(Service2), new Uri("http://localhost:8000/TestService2")))    //注意：启动多个ServiceHost时，不同的ServiceHost，URI必须不同。
                 {
+                    //enable HTTP get
+                    ServiceMetadataBehavior smb2 = host.Description.Behaviors.Find<ServiceMetadataBehavior>();
+                    if (smb2 == null) smb2 = new ServiceMetadataBehavior();
+                    smb2.HttpGetEnabled = true;
+                    smb2.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
+                    host2.Description.Behaviors.Add(smb2);
+
                     host2.AddServiceEndpoint(typeof(IService2), new BasicHttpBinding(), "");
                     host2.Open();    // Service channel craeted
 
@@ -49,6 +73,8 @@ namespace Host
             } 
         }
 
+        //用来测试SSL的server - client和SSL的serve通信。和routing service没关系。
+        //如果要测试routing service，应该调用hostFromStrach()。让Routing service route到hostFromStrach的服务上。
         static void hostSSL()
         {
             using (ServiceHost host3 = new ServiceHost(typeof(SecureService)))
@@ -59,14 +85,5 @@ namespace Host
             }
         }
 
-        static void Main(string[] args)
-        {
-            //Basic HTTP WCF host
-            //hostFromStrach();
-            //hostWithAppConfig();
-            
-            //ssl WCF host
-            hostSSL();
-        }
     }
 }

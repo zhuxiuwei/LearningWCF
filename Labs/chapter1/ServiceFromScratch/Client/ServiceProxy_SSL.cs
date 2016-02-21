@@ -24,6 +24,8 @@ namespace Client
                 base(binding, remoteAddress) {
         }
 
+
+
         public string HelloSecure([MessageParameter(Name = "stringSecure")]string s)
         {
             return base.Channel.HelloSecure(s);
