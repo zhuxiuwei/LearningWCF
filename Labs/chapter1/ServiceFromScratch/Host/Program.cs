@@ -28,9 +28,16 @@ namespace Host
                 //enable HTTP get
                 ServiceMetadataBehavior smb = host.Description.Behaviors.Find<ServiceMetadataBehavior>();
                 if (smb == null)  smb = new ServiceMetadataBehavior();
-                smb.HttpGetEnabled = true;
+                smb.HttpGetEnabled = true;  
                 smb.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
                 host.Description.Behaviors.Add(smb);
+
+                //Enable IncludeExceptionDetailInFaults
+                ServiceDebugBehavior debug = host.Description.Behaviors.Find<ServiceDebugBehavior>();
+                if (debug == null) debug = new ServiceDebugBehavior();
+                debug.IncludeExceptionDetailInFaults = true;    
+                host.Description.Behaviors.Remove( typeof(ServiceDebugBehavior));   //必须先remove，否则报错：Unhandled Exception: System.ArgumentException: The value could not be added to the collection, as the collection already contains an item of the same type: 'System.ServiceModel.Description.ServiceDebugBehavior'. This collection only supports one instance of each type.
+                host.Description.Behaviors.Add(debug);  
 
                 host.AddServiceEndpoint(typeof(IHelloIndigoService), new BasicHttpBinding(), "");   //注意，这里的typeof又是接口了。真是够乱七八糟的。
                 host.Open();    // Service channel craeted
@@ -40,10 +47,9 @@ namespace Host
                 {
                     //enable HTTP get
                     ServiceMetadataBehavior smb2 = host.Description.Behaviors.Find<ServiceMetadataBehavior>();
-                    if (smb2 == null) smb2 = new ServiceMetadataBehavior();
-                    smb2.HttpGetEnabled = true;
-                    smb2.MetadataExporter.PolicyVersion = PolicyVersion.Policy15;
-                    host2.Description.Behaviors.Add(smb2);
+                    host2.Description.Behaviors.Add(smb);
+                    host2.Description.Behaviors.Remove(typeof(ServiceDebugBehavior));
+                    host2.Description.Behaviors.Add(debug); 
 
                     host2.AddServiceEndpoint(typeof(IService2), new BasicHttpBinding(), "");
                     host2.Open();    // Service channel craeted

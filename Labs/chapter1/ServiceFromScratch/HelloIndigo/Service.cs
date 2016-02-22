@@ -49,6 +49,8 @@ namespace HelloIndigo
 
          public string Hello2([MessageParameter(Name = "string")]string s)
          {
+             if (s.Equals("BAD"))    //test exception
+                 throw new Exception("Test Exception!!!");
              return String.Format("Service2 Hello2 Method! Your parameter is: {0}", s);
          }
      }

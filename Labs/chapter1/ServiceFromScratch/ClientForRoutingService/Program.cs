@@ -29,6 +29,7 @@ namespace ClientForRoutingService
             Console.WriteLine("--- test HTTP Service2 ---");
             Console.WriteLine(serv2Client.Hello("parm for hello"));
             Console.WriteLine(serv2Client.Hello2("parm for hello2"));
+            Console.WriteLine(serv2Client.Hello2("BAD"));
             serv2Client.Close();
             helloClient.Close();
         }
