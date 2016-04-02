@@ -5,13 +5,15 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloIndigo", "HelloIndigo\HelloIndigo.csproj", "{2FAF2FB9-078B-4BC6-9771-1825B63EA1EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Host", "Host\Host.csproj", "{C8B33F44-3392-4B5C-A0C8-6564DBB835CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostHttpAndSSLWsHttp", "Host\HostHttpAndSSLWsHttp.csproj", "{C8B33F44-3392-4B5C-A0C8-6564DBB835CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{DC7B4FAE-EB1E-48BB-9365-B3CE4D94CB39}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsRouterService", "AwsRouterService\AwsRouterService.csproj", "{57C2CB10-1340-45EB-8DE5-65694B86C760}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientForRoutingService", "ClientForRoutingService\ClientForRoutingService.csproj", "{2E35FC4E-1717-4FF9-A3A9-B8DA8AE073F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HostSSLBasicHttp", "HostSSLBasicHttp\HostSSLBasicHttp.csproj", "{59DEDE1F-D410-4A47-8EEA-6ABE8AD09EE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2E35FC4E-1717-4FF9-A3A9-B8DA8AE073F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E35FC4E-1717-4FF9-A3A9-B8DA8AE073F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E35FC4E-1717-4FF9-A3A9-B8DA8AE073F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59DEDE1F-D410-4A47-8EEA-6ABE8AD09EE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59DEDE1F-D410-4A47-8EEA-6ABE8AD09EE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59DEDE1F-D410-4A47-8EEA-6ABE8AD09EE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59DEDE1F-D410-4A47-8EEA-6ABE8AD09EE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

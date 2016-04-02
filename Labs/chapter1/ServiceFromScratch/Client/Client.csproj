@@ -47,11 +47,23 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecureServiceClient.cs" />
+    <Compile Include="Service References\SecureBasicHttpReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="ServiceProxy_SSL.cs" />
     <Compile Include="ServiceProxy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Service References\SecureBasicHttpReference\SecureServiceBasicHttp.wsdl" />
+    <None Include="Service References\SecureBasicHttpReference\SSLServiceBasicHttp.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SecureBasicHttpReference\SSLServiceBasicHttp1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HelloIndigo\HelloIndigo.csproj">
@@ -61,6 +73,21 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SecureBasicHttpReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SecureBasicHttpReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SecureBasicHttpReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SecureBasicHttpReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

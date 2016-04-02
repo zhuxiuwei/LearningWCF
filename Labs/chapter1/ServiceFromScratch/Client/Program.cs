@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ServiceModel;
+﻿using System.ServiceModel;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel.Security;
 using Client.SecureService;
+using Client.SecureBasicHttpReference;
+using System;
 
 namespace Client
 {
@@ -14,12 +11,28 @@ namespace Client
     {
         static void Main(string[] args)
         {
+            var binding = new BasicHttpBinding(BasicHttpSecurityMode.Transport);
+            //binding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.Certificate;
+            binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Certificate;
+
+            var client = new SecureServiceBasicHttpClient(binding, new EndpointAddress("https://win-c088qgabq4r:8123/SSLServiceBasicHttp"));
+
+            //var x = client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode;
+            client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
+            client.ClientCredentials.ClientCertificate.SetCertificate(StoreLocation.LocalMachine, StoreName.My,
+                X509FindType.FindByThumbprint,
+                "fd0ce0c14d01e7e7221c14bbd3cc9620c4ee327c");
+
+            var result = client.HelloSecure("sssss");
+            Console.WriteLine(result);
+
             //callService();
             //callService2();
-            callSSLService2();
+            //callSSLService2();
+            //callSSLServiceWithBasicHttp();
 
-            Console.WriteLine("Press <ENTER> to terminate Client.");
-            Console.ReadLine();
+            //Console.WriteLine("Press <ENTER> to terminate Client.");
+            //Console.ReadLine();
         }
 
         private static void callService()
@@ -56,7 +69,7 @@ namespace Client
             Console.WriteLine("SSLService: " + s3);
         }
 
-        //把client安全相关的信息都写到code里 160215
+        //把client安全相关的信息都写到code里 160215。 WsHttpBinding
         static void callSSLService2()
         {
             // Create the binding.
@@ -101,6 +114,30 @@ namespace Client
             Console.WriteLine(cc.HelloSecure("hello from SSL"));
 
             cc.Close();
+        }
+
+        //call SSL with basicHttpBinding 160401。 
+        static void callSSLServiceWithBasicHttp()
+        {
+            // Create the binding.
+            var myBinding = new BasicHttpBinding(BasicHttpSecurityMode.Transport);
+            //myBinding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.Certificate;   
+            myBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Certificate;
+
+            EndpointAddress ea = new EndpointAddress(new Uri("https://WIN-C088QGABQ4R:8123/SSLServiceBasicHttp"));
+
+            var client = new SecureServiceBasicHttpClient(myBinding, new EndpointAddress("https://WIN-C088QGABQ4R:8123/SSLServiceBasicHttp"));
+
+            // The client must specify a certificate trusted by the server.
+            client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
+            client.ClientCredentials.ClientCertificate.SetCertificate(
+                StoreLocation.LocalMachine,
+                StoreName.My,
+                X509FindType.FindByThumbprint,
+                "4cbd55c2a80407e6a2d17ac2e4715e02c74f9407");
+
+            // Begin using the client.
+            Console.WriteLine(client.HelloSecure("hello from SSL"));
         }
     }
 }

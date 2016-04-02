@@ -66,24 +66,10 @@ namespace HelloIndigo
      {
          public string HelloSecure([MessageParameter(Name = "stringSecure")]string s)
          {
-             Console.WriteLine("Request Incoming! Parameter: " + s);
+             Console.WriteLine("Request Incoming SecureService! Parameter: " + s);
              return String.Format("SecureService HelloSecure Method! Your parameter is: {0}", s);
          }
      }
 
-     //测试SSL Service - BaiscHTTPBinding. 160401
-     [ServiceContract]
-     public interface ISecureServiceBasicHttp
-     {
-         [OperationContract]
-         string HelloSecure([MessageParameter(Name = "stringSecure")]string s); 
-     }
-     public class SecureServiceBasicHttp : ISecureServiceBasicHttp
-     {
-         public string HelloSecure([MessageParameter(Name = "stringSecure")]string s)
-         {
-             Console.WriteLine("Request Incoming! Parameter: " + s);
-             return String.Format("SecureServiceBasicHttp HelloSecure Method! Your parameter is: {0}", s);
-         }
-     }
+    
 }
