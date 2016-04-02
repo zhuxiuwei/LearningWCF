@@ -11,28 +11,13 @@ namespace Client
     {
         static void Main(string[] args)
         {
-            var binding = new BasicHttpBinding(BasicHttpSecurityMode.Transport);
-            //binding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.Certificate;
-            binding.Security.Transport.ClientCredentialType = HttpClientCredentialType.Certificate;
-
-            var client = new SecureServiceBasicHttpClient(binding, new EndpointAddress("https://win-c088qgabq4r:8123/SSLServiceBasicHttp"));
-
-            //var x = client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode;
-            client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
-            client.ClientCredentials.ClientCertificate.SetCertificate(StoreLocation.LocalMachine, StoreName.My,
-                X509FindType.FindByThumbprint,
-                "fd0ce0c14d01e7e7221c14bbd3cc9620c4ee327c");
-
-            var result = client.HelloSecure("sssss");
-            Console.WriteLine(result);
-
             //callService();
             //callService2();
             //callSSLService2();
-            //callSSLServiceWithBasicHttp();
+            callSSLServiceWithBasicHttp();
 
-            //Console.WriteLine("Press <ENTER> to terminate Client.");
-            //Console.ReadLine();
+            Console.WriteLine("Press <ENTER> to terminate Client.");
+            Console.ReadLine();
         }
 
         private static void callService()
@@ -119,6 +104,7 @@ namespace Client
         //call SSL with basicHttpBinding 160401。 
         static void callSSLServiceWithBasicHttp()
         {
+
             // Create the binding.
             var myBinding = new BasicHttpBinding(BasicHttpSecurityMode.Transport);
             //myBinding.Security.Message.ClientCredentialType = BasicHttpMessageCredentialType.Certificate;   
@@ -134,7 +120,7 @@ namespace Client
                 StoreLocation.LocalMachine,
                 StoreName.My,
                 X509FindType.FindByThumbprint,
-                "4cbd55c2a80407e6a2d17ac2e4715e02c74f9407");
+                "fd0ce0c14d01e7e7221c14bbd3cc9620c4ee327c");
 
             // Begin using the client.
             Console.WriteLine(client.HelloSecure("hello from SSL"));
