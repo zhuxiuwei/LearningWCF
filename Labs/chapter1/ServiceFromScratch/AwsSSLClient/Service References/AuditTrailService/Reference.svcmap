@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3f50eba2-6675-4ff1-9097-e7de0fb6676b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1234/AuditTrailService?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AuditTrailService.xsd" MetadataType="Schema" ID="80e69cf2-e1ba-4397-9c7b-cde1d59afd18" SourceId="1" SourceUrl="http://localhost:1234/AuditTrailService?xsd=xsd0" />
+    <MetadataFile FileName="AuditTrailService1.xsd" MetadataType="Schema" ID="e9c61430-ba5b-4ff4-951c-f7f0888cfdd2" SourceId="1" SourceUrl="http://localhost:1234/AuditTrailService?xsd=xsd3" />
+    <MetadataFile FileName="AuditTrailService2.xsd" MetadataType="Schema" ID="87cda9eb-6a81-46ef-8ff2-1394718679af" SourceId="1" SourceUrl="http://localhost:1234/AuditTrailService?xsd=xsd1" />
+    <MetadataFile FileName="AuditTrailService.wsdl" MetadataType="Wsdl" ID="daa9d4d5-9d97-4d36-9e0e-9aeb50a5b158" SourceId="1" SourceUrl="http://localhost:1234/AuditTrailService?wsdl" />
+    <MetadataFile FileName="AuditTrailService3.xsd" MetadataType="Schema" ID="b2fe8019-072c-4fc9-9cba-41a9e3cebbad" SourceId="1" SourceUrl="http://localhost:1234/AuditTrailService?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
